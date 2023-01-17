@@ -25,7 +25,10 @@
                 </div>
             </li>
             <li class="list-group-item">
-                <div>
+                <div v-if="store.langList.includes(movie.original_language)">
+                    <img class="flag" :src="`./src/assets/img/${movie.original_language}-flag.png`" alt="">
+                </div>
+                <div v-else>
                     Lingua originale: {{ movie.original_language }}
                 </div>
             </li>
@@ -38,7 +41,9 @@
   </div>
 </template>
 
-<style lang="">
-    
+<style lang="scss">
+    .flag{
+        width: 30px;
+    }
 </style>
 
