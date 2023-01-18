@@ -25,8 +25,10 @@
 
 <template lang="">
     <div class="col card text-bg-dark card_shadow">
-        <div class="pt-3">
-            <img :src="`https://image.tmdb.org/t/p/w342/${tv.poster_path}`" class="card-img-top" :alt="tv.name">
+        <div class="pt-4">
+            <div class="my_card_img" >
+                <img :src="`https://image.tmdb.org/t/p/w342/${tv.poster_path}`" class="card-img-top" :alt="tv.name">
+            </div>
         </div>
         <div class="card-body">
         <h5 class="card-title">{{ tv.name }}</h5>

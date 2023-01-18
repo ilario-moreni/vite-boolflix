@@ -25,8 +25,10 @@
 
 <template lang="">
     <div class="col card text-bg-dark card_shadow">
-        <div class="pt-3">
-            <img :src="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`" class="card-img-top" :alt="movie.title">
+        <div class="pt-4">
+            <div class="my_card_img" >
+                <img :src="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`" class="card-img-top" :alt="movie.title">
+            </div>
         </div>
         <div class="card-body">
         <h5 class="card-title">{{ movie.title }}</h5>
@@ -71,6 +73,14 @@
 
     .flag{
         width: 30px;
+    }
+
+    .my_card_img{
+        min-height: 300px;
+        img{
+            max-height: 300px; 
+            object-fit: contain;
+        }
     }
 </style>
 
