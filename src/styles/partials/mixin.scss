@@ -1,17 +1,28 @@
 @mixin card_ul {
     list-style-type: none;
     padding-inline-start: 0;
+    margin-bottom: 0;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 348px;
 
-    li {
-        min-height: 50px;
-
-        &:first-child {
-            min-height: 100px;
-        }
-
-        &:last-child {
-            min-height: 30px;
-        }
+    .title_card {
+        min-height: 40%;
     }
+
+    .original_title {
+        max-height: 40%;
+    }
+
+    .flag_li {
+        height: 10%;
+    }
+
+    .stars_li {
+        height: 10%;
+    }
+
 }

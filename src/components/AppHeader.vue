@@ -1,6 +1,26 @@
 <script>
+    import { store } from '../store';
+    import axios from 'axios';
+
     export default {
-        
+        data(){
+            return{
+                store,
+                searchText: '',
+            }
+        },
+        methods: {
+            search(input){
+                let apiCall = store.api + input;
+                let apiCall_tv = store.api_tv + input;
+                axios.get(apiCall).then((response) => {
+                    store.movieList = response.data.results
+                })
+                axios.get(apiCall_tv).then((response) => {
+                    store.seriesList = response.data.results
+                })
+            }
+        }
     }
 </script>
 
@@ -9,8 +29,14 @@
         <div class="row">
             <div class="col">
                 <h1>
-                    BOOLFIX
+                    BOOLFLIX
                 </h1>
+            </div>
+            <div class="col px-5">
+                <div class="input-group flex-shrink-1 m-3">
+                    <input type="text" class="form-control" placeholder="Cerca film e serie TV" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="searchText" @keyup="search(searchText)">
+                    <button class="btn  btn-danger" type="button" id="button-addon2" @click="search(searchText)">Cerca</button>
+                </div>
             </div>
         </div>
     </div>
