@@ -17,7 +17,7 @@
 </script>
 <template lang="">
     <div class="container my-4">
-        <div v-if="store.movieList || store.seriesList" class="mt-3 text-white">
+        <div v-if="store.movieList != 0 || store.seriesList != 0" class="mt-3 text-white">
             Ho trovato {{ store.movieList.length }} film e {{ store.seriesList.length }} serie TV in base alla tua ricerca.
         </div>
         <div v-if="!store.movieList.length == 0" class="row">
